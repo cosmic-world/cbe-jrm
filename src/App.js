@@ -160,6 +160,7 @@ function App() {
             }}
           />
         </div>
+        <label className={`title-small`}>Customer Route Map</label>
         <Autocomplete
           disablePortal
           options={destinationList.map((item) => item.toUpperCase())}
@@ -201,15 +202,18 @@ function App() {
             process.env.PUBLIC_URL
           }/asset/JRM_HTML_FILE/${selectedDest.toLowerCase()}.html`}
           width="98%"
-          height="78%"
           title="CBE-JRM" // Title for accessibility
-          style={{ border: '1px solid gray', borderRadius: '8px' }}
+          className="iframe-style"
+          style={{
+            border: '1px solid gray',
+            borderRadius: '8px',
+          }}
         />
       ) : (
         <div
+          className="iframe-style"
           style={{
             width: '98%',
-            height: '78%',
             border: '1px solid gray',
             borderRadius: '8px',
             display: 'flex',

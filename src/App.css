@@ -12,27 +12,44 @@
 }
 .title {
   font-family: 'Roboto';
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-weight: bold;
   font-style: italic;
-  margin: 0.5%;
+}
+.title-small {
+  font-family: 'Roboto';
+  font-size: 2vw;
+  font-weight: bold;
+  font-style: italic;
 }
 .IOCLImage {
   background: url(../public/IOCL.png);
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   background-size: contain;
-  height: 19vh;
+  height: 21vh;
   width: 16vw;
   position: absolute;
   top: 0;
   left: 0;
 }
 .title-bar {
-  height: 19vh;
+  height: 21vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.iframe-style {
+  height: 78%;
+}
+@media only screen and (max-width: 600px) {
+  .IOCLImage,
+  .title-bar {
+    height: 12vh;
+  }
+  .iframe-style {
+    height: 88%;
+  }
 }
