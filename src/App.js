@@ -165,10 +165,10 @@ function App() {
           disablePortal
           options={destinationList.map((item) => item.toUpperCase())}
           sx={{
-            width: isSmallScreen ? '50vw' : '50vw',
+            width: isSmallScreen ? '90vw' : '50vw',
             marginBottom: '10px',
             '& + .MuiAutocomplete-popper .MuiAutocomplete-option': {
-              fontSize: '1vw',
+              fontSize: isSmallScreen ? '4vw' : '1vw',
             },
           }}
           name="jrm"
@@ -180,13 +180,13 @@ function App() {
               label={selectedDest === null ? 'Select Destination...' : ''}
               sx={{
                 '& .MuiOutlinedInput-root': {
-                  fontSize: '1.5vw',
+                  fontSize: isSmallScreen ? '4vw' : '1vw',
                   color: 'black',
                   fontFamily: 'calibri',
                   backgroundColor: 'white',
                 },
                 '& .MuiInputLabel-root': {
-                  fontSize: '1.5vw',
+                  fontSize: isSmallScreen ? '4vw' : '1vw',
                   color: 'black',
                   fontFamily: 'calibri',
                   backgroundColor: 'white',

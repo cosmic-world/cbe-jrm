@@ -47,9 +47,20 @@
 @media only screen and (max-width: 600px) {
   .IOCLImage,
   .title-bar {
-    height: 12vh;
+    height: 17vh;
+  }
+  .title {
+    font-size: 4vw;
+    margin-top: 2%;
+  }
+  .title-small {
+    font-size: 3.5vw;
+    margin: 2%;
+  }
+  .IOCLImage {
+    background-position: center 5%;
   }
   .iframe-style {
-    height: 88%;
+    height: 80%;
   }
 }
