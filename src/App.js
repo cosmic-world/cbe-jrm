@@ -182,7 +182,7 @@ function App() {
       />
       {selectedDest ? (
         <iframe
-          src={`/asset/JRM_HTML_FILE/${selectedDest}.html`} // The URL to display inside the iframe
+          src={`/asset/JRM_HTML_FILE/${selectedDest.toLowerCase()}.html`} // The URL to display inside the iframe
           width="98%"
           height="78%"
           title="CBE-JRM" // Title for accessibility
