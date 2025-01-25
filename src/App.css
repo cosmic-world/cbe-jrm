@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   /* background: radial-gradient(circle, #f0b73d 60%, #98cfe9 40%); */
-  background: radial-gradient(circle, #f7aa05 20%, #c2deeb 80%);
+  background: radial-gradient(circle, rgb(158, 212, 103) 20%, #eedfbe 80%);
   align-items: center;
   justify-content: flex-start;
   margin: 0;
@@ -44,6 +44,7 @@
 .iframe-style {
   height: 78%;
 }
+
 @media only screen and (max-width: 600px) {
   .IOCLImage,
   .title-bar {
