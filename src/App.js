@@ -1,4 +1,5 @@
 import { TextField, Autocomplete } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { useState } from 'react';
@@ -143,43 +144,57 @@ function App() {
     'vishagan_fuels_park_330432',
   ];
   const [selectedDest, setSelectedDest] = useState(null);
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
   return (
     <div className="App d-flex flex-column vh-100 vw-100">
       <div className="IOCLImage" aria-current="page" />
-      <div className={`title`}>
-        <Typewriter
-          options={{
-            strings: 'IOCL - COIMBATORE TERMINAL',
-            pauseFor: 5000,
-            autoStart: true,
-            loop: false,
-            cursor: '',
+      <div className="title-bar">
+        <div className={`title`}>
+          <Typewriter
+            options={{
+              strings: 'IOCL - COIMBATORE TERMINAL',
+              pauseFor: 5000,
+              autoStart: true,
+              loop: false,
+              cursor: '',
+            }}
+          />
+        </div>
+        <Autocomplete
+          disablePortal
+          options={destinationList.map((item) => item.toUpperCase())}
+          sx={{
+            width: isSmallScreen ? '50vw' : '50vw',
+            marginBottom: '10px',
+            '& + .MuiAutocomplete-popper .MuiAutocomplete-option': {
+              fontSize: '1vw',
+            },
           }}
+          name="jrm"
+          onChange={(e, newValue) => setSelectedDest(newValue)}
+          size="small"
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label={selectedDest === null ? 'Select Destination...' : ''}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  fontSize: '1.5vw',
+                  color: 'black',
+                  fontFamily: 'calibri',
+                  backgroundColor: 'white',
+                },
+                '& .MuiInputLabel-root': {
+                  fontSize: '1.5vw',
+                  color: 'black',
+                  fontFamily: 'calibri',
+                  backgroundColor: 'white',
+                },
+              }}
+            />
+          )}
         />
       </div>
-      <Autocomplete
-        disablePortal
-        options={destinationList.map((item) => item.toUpperCase())}
-        sx={{ width: '50vw', mb: 2 }}
-        name="jrm"
-        onChange={(e, newValue) => setSelectedDest(newValue)}
-        size="small"
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            InputProps={{
-              ...params.InputProps,
-              style: {
-                fontFamily: 'cambria',
-                fontSize: '1.5vw',
-                width: '50vw',
-                backgroundColor: 'white',
-              },
-            }}
-            label={selectedDest === null ? 'Select Destination' : ''}
-          />
-        )}
-      />
       {selectedDest ? (
         <iframe
           src={`${
