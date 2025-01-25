@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  /* background: radial-gradient(circle, #f0b73d 60%, #98cfe9 40%); */
+  background: radial-gradient(circle, #f7aa05 20%, #c2deeb 80%);
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  position: relative;
+}
+* {
+  user-select: none;
+}
+.title {
+  font-family: 'Roboto';
+  font-size: 3vw;
+  font-weight: bold;
+  font-style: italic;
+  margin: 1%;
+}
+.IOCLImage {
+  background: url(../public/IOCL.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
